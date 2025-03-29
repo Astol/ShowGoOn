@@ -11,11 +11,14 @@ web-app-project
 │   │   └── main.go
 │   ├── internal
 │   │   ├── repository
-│   │   │   └── repository.go
+│   │   │   ├── slide_repository.go
+│   │   │   └── settings_repository.go
 │   │   ├── service
-│   │   │   └── service.go
+│   │   │   ├── slide_service.go
+│   │   │   └── settings_service.go
 │   │   └── handler
-│   │       └── handler.go
+│   │       ├── slide_handler.go
+│   │       └── settings_handler.go
 │   ├── go.mod
 │   └── go.sum
 └── README.md
@@ -26,9 +29,15 @@ web-app-project
 The backend is built using Go and follows the repository pattern. It consists of:
 
 - **cmd/main.go**: Entry point of the application, initializes the server and sets up routing.
-- **internal/repository**: Contains the repository interface and methods for data access.
+- **internal/repository**: Contains the repository interfaces and methods for data access.
+  - `slide_repository.go`: Manages database operations for slides.
+  - `settings_repository.go`: Manages database operations for settings.
 - **internal/service**: Implements business logic and interacts with the repository.
+  - `slide_service.go`: Contains business logic for slides.
+  - `settings_service.go`: Contains business logic for settings.
 - **internal/handler**: Defines HTTP handlers for incoming requests.
+  - `slide_handler.go`: Handles HTTP requests for slides.
+  - `settings_handler.go`: Handles HTTP requests for settings.
 
 ## Setup Instructions
 
