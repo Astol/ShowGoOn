@@ -1,1 +1,15 @@
-<p>slides works!</p>
+<h1>Add slide</h1>
+
+<form [formGroup]="slideForm" (ngSubmit)="onSubmit()">
+    <p-floatlabel variant="on" class="mb-3">
+        <input id="title" type="text" pInputText formControlName="title" />
+        <label for="title">Title</label>
+    </p-floatlabel>
+    
+    <p-floatlabel variant="on" class="mb-3">
+        <textarea pTextarea id="description" formControlName="description" rows="5" cols="30" [autoResize]="true"></textarea>
+        <label for="description">Description</label>
+    </p-floatlabel>
+
+    <p-button label="Submit" type="submit" [disabled]="false"/>
+</form>
